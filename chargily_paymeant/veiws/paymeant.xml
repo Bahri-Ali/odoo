@@ -1,0 +1,11 @@
+<odoo>
+    <menuitem
+            id="test-1"
+            name="test"
+    />
+    <menuitem
+            id="properts"
+            name="test2"
+            parent="test-1"
+    />
+</odoo>

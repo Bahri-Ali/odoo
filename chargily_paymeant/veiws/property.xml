@@ -1,0 +1,52 @@
+<odoo>
+<!--    this is how to create views-->
+    <record id="paymeant_view" model="ir.ui.view">
+        <field name="name">paymeant.form.view</field>
+        <field name="model">paymeant</field>
+        <field name="arch" type="xml">
+            <form string="Paymeant">
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="transaction"/>
+                        <field name="blance"/>
+                        <field name="reference"/>
+                        <field name="state"/>
+                        <field name="tva"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!--this how to create tree-->
+    <record id="tree_paymeant_view" model="ir.ui.view">
+        <field name="name">paymeant.tree.view</field>
+        <field name="model">paymeant</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="date"/>
+                <field name="transaction"/>
+                <field name="blance"/>
+                <field name="reference"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="shop_action" model="ir.actions.act_window">
+        <field name="name">Shop Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">paymeant</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+          </p><p>
+          </p>
+        </field>
+    </record>
+    <menuitem
+        id="shop"
+        name="Shop"
+        action="shop_action"
+    />
+</odoo>
